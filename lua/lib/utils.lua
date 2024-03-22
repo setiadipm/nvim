@@ -92,20 +92,4 @@ M.keymap = {
   end,
 }
 
-M.load_mappings = function(section, mapping_opts)
-  local mappings = load_config()
-
-  if type(section) == "string" then
-    mappings = mappings[section]
-  end
-
-  for _, mapping in pairs(mappings) do
-    local mode = mapping[1]
-    local lhs = mapping[2]
-    local rhs = mapping[3]
-    local opts = vim.tbl_extend("force", mapping_opts or {}, mapping[4] or {})
-    M.keymap.set(mode, lhs, rhs, opts)
-  end
-end
-
 return M
