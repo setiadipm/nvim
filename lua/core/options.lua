@@ -64,6 +64,7 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 opt.mouse = "" -- disable mouse
 opt.undofile = true -- enable persistent undo
 opt.whichwrap:append("<>[]hl") -- go to prev/next line with h,l,left arrow and right arrow when cursor reaches end/beginning of line
+opt.ttimeoutlen = 10 -- reduce wait for a key code sequence to complete, default is 50
 
 -- Search settings
 opt.ignorecase = true -- ignore case when searching

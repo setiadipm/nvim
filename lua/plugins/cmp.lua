@@ -2,7 +2,7 @@ local cmp_ui = require("lib.utils").cmp_ui
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     -- Snippet engine
     {
