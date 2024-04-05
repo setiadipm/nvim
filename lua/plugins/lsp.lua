@@ -3,47 +3,10 @@ local lsps = {
   docker_compose_language_service = { package = "docker-compose-language-service" },
   dockerls = { package = "dockerfile-language-server" },
   eslint = { package = "eslint-lsp" },
-  gopls = {
-    package = "gopls",
-    opts = {
-      settings = {
-        gopls = {
-          analyses = {
-            fieldalignment = false,
-            nilness = true,
-            unusedparams = true,
-            unusedwrite = true,
-            useany = true,
-          },
-          hints = {
-            constantValues = true,
-            parametereNames = true,
-            rangeVariableTypes = true,
-          },
-          usePlaceholders = true,
-          completeUnimported = true,
-          staticcheck = true,
-        },
-      },
-    },
-  },
+  gopls = { package = "gopls" },
   html = { package = "html-lsp" },
   intelephense = { package = "intelephense" },
-  lua_ls = {
-    package = "lua-language-server",
-    opts = {
-      settings = {
-        Lua = {
-          completion = {
-            callSnippet = "Replace",
-          },
-          diagnostics = {
-            globals = { "vim" },
-          },
-        },
-      },
-    },
-  },
+  lua_ls = { package = "lua-language-server" },
   tsserver = { package = "typescript-language-server" },
   tailwindcss = { package = "tailwindcss-language-server" },
   templ = { package = "templ" },
@@ -58,7 +21,7 @@ local formatters = {
   "gofumpt",
   "goimports-reviser",
   "php-cs-fixer",
-  "prettierd",
+  "prettier",
   "shfmt",
   "stylua",
 }
@@ -123,11 +86,17 @@ return {
         require("lib.utils").keymap.load("lsp", { buffer = bufnr })
       end
 
-      for lspname, lspinfo in pairs(lsps) do
-        local opts = vim.tbl_extend("force", {
+      for lspname, _ in pairs(lsps) do
+        local opts = {
           on_attach = on_attach,
           capabilities = capabilities,
-        }, lspinfo.opts or {})
+        }
+
+        -- Load custom lsp options
+        local has_custom_opts, lsp_custom_opts = pcall(require, "lsps." .. lspname)
+        if has_custom_opts then
+          opts = vim.tbl_deep_extend("force", opts, lsp_custom_opts)
+        end
 
         lspconfig[lspname].setup(opts)
       end
