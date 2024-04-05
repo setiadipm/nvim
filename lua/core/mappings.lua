@@ -25,6 +25,7 @@ M.default = {
   { "n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" } },
   { "n", "<leader>se", "<C-w>=", { desc = "Equal split size" } },
   { "n", "<leader>sx", ":close<CR>", { desc = "Close current split" } },
+  { "n", "<leader>sq", ":bdelete<CR>", { desc = "Remove current buffer" } },
   { "n", "<C-k>", "<C-w>k", { desc = "Go to upper split" } },
   { "n", "<C-j>", "<C-w>j", { desc = "Go to lower split" } },
   { "n", "<C-h>", "<C-w>h", { desc = "Go to left split" } },
@@ -113,23 +114,7 @@ M.lsp = {
     end,
     { desc = "LSP implementation" },
   },
-  -- {
-  --   "n",
-  --   "<leader>q",
-  --   ":Lspsaga show_workspace_diagnostics ++float<CR>",
-  --   { desc = "Telescope show diagnotics" },
-  -- },
   { { "n", "v" }, "<leader>ca", ":Lspsaga code_action<CR>", { desc = "Lspsaga code action" } },
-  -- {
-  --   { "n", "v" },
-  --   "<leader>ca",
-  --   function()
-  --     vim.lsp.buf.code_action()
-  --   end,
-  --   { desc = "Lspsaga code action" },
-  -- },
-  { "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", { desc = "Goto prev diagnostic" } },
-  { "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", { desc = "Goto next diagnostic" } },
   {
     "n",
     "<leader>cf",
@@ -138,6 +123,9 @@ M.lsp = {
     end,
     { desc = "LSP formatting" },
   },
+  { "n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP rename" } },
+  { "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", { desc = "Goto prev diagnostic" } },
+  { "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", { desc = "Goto next diagnostic" } },
   {
     "n",
     "<leader>wl",
@@ -151,7 +139,6 @@ M.lsp = {
   -- { "n", "<leader>wr", vim.lsp.buf.remove_workspace_folder },
   -- { "n", "<leader>ls", vim.lsp.buf.signature_help },
   -- { "n", "<leader>D", vim.lsp.buf.type_definition },
-  -- { "n", "<leader>ra", vim.lsp.buf.rename },
   -- { "n", "gr", vim.lsp.buf.references },
 }
 
