@@ -12,6 +12,7 @@ return {
       opts.window = {
         padding = 0,
         margin = { horizontal = 0 },
+        zindex = 40,
       }
       opts.render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":~:.") -- Show relative path
