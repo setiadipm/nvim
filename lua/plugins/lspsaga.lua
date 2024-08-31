@@ -10,6 +10,9 @@ return {
       lightbulb = {
         enable = false,
       },
+      outline = {
+        layout = "float",
+      },
     },
   },
 }

@@ -104,8 +104,10 @@ M.gopher = {
 
 M.lsp = {
   { "n", "K", ":Lspsaga hover_doc<CR>", { desc = "Lspsaga hover" } },
+  { "n", "<leader>fo", ":Lspsaga outline<CR>", { desc = "Lspsaga outline" } },
   { "n", "gd", ":Lspsaga peek_definition<CR>", { desc = "Lspsaga peek definition" } },
   { "n", "gD", ":Lspsaga goto_definition<CR>", { desc = "Lspsaga goto definition" } },
+  { "n", "gf", ":Lspsaga finder<CR>", { desc = "Lspsaga finder" } },
   {
     "n",
     "gi",
