@@ -195,6 +195,10 @@ M.telescope = {
   { "n", "<leader>th", ":Telescope themes<CR>", { desc = "Theme switcher" } },
 }
 
+M.todo = {
+  { "n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find Todos" } },
+}
+
 M.tmuxnavigator = {
   { "n", "<C-h>", ":TmuxNavigateLeft<CR>", dec = "Window left" },
   { "n", "<C-j>", ":TmuxNavigateDown<CR>", dec = "Window down" },
