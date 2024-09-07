@@ -153,7 +153,7 @@ M.mason = {
 }
 
 M.maximizer = {
-  { "n", "<leader>sm", ":MaximizerToggle!<CR>", { desc = "Toggle maximize split" } },
+  { "n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle maximize split" } },
 }
 
 M.neotree = {
