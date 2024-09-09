@@ -7,7 +7,7 @@ local lsps = {
   html = { package = "html-lsp" },
   intelephense = { package = "intelephense" },
   lua_ls = { package = "lua-language-server" },
-  tsserver = { package = "typescript-language-server" },
+  ts_ls = { package = "typescript-language-server" },
   tailwindcss = { package = "tailwindcss-language-server" },
   templ = { package = "templ" },
 }
