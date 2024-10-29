@@ -34,7 +34,7 @@ return {
   CSBorder2 = { fg = colors.blue, bg = "none" },
   CSCursorLine1 = { fg = colors.text, bg = colors.surface1 },
   CSCursorLine2 = { fg = colors.base, bg = colors.blue },
-  ColorColumn = { bg = colors.surface1 },
+  ColorColumn = { bg = colors.surface0 },
   Cursor = { bg = colors.overlay0 },
   -- END
 
