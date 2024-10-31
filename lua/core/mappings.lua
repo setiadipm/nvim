@@ -189,8 +189,8 @@ M.telescope = {
   -- Diagnostic
   { "n", "<leader>q", ":Telescope diagnostics<CR>", { desc = "Show diagnotics" } },
   -- Git
-  { "n", "<leader>gc", ":Telescope git_commits<CR>", { desc = "Show git commits" } },
-  { "n", "<leader>gs", ":Telescope git_status<CR>", { desc = "Show git status" } },
+  { "n", "<leader>fc", ":Telescope git_commits<CR>", { desc = "Show git commits" } },
+  { "n", "<leader>fs", ":Telescope git_status<CR>", { desc = "Show git status" } },
   -- Theme
   { "n", "<leader>th", ":Telescope themes<CR>", { desc = "Theme switcher" } },
 }
