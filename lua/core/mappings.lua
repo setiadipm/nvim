@@ -231,11 +231,11 @@ M.toggleterm = {
   },
   { "t", "<ESC>", [[<C-\><C-n>]] },
   { "t", "jk", [[<C-\><C-n>]] },
-  { "t", "<C-k>", [[:wincmd k<CR>]] },
-  { "t", "<C-j>", [[:wincmd j<CR>]] },
-  { "t", "<C-h>", [[:wincmd h<CR>]] },
-  { "t", "<C-l>", [[:wincmd l<CR>]] },
-  { "t", "<C-w>", [[<C-\><C-n><C-w>]] },
+  -- { "t", "<C-k>", [[:wincmd k<CR>]] },
+  -- { "t", "<C-j>", [[:wincmd j<CR>]] },
+  -- { "t", "<C-h>", [[:wincmd h<CR>]] },
+  -- { "t", "<C-l>", [[:wincmd l<CR>]] },
+  -- { "t", "<C-w>", [[<C-\><C-n><C-w>]] },
 }
 
 M.ufo = {

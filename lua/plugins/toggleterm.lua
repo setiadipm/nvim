@@ -12,7 +12,9 @@ return {
         FloatBorder = { link = "TermFloatBorder" },
       },
       on_open = function()
-        vim.cmd("startinsert!")
+        vim.defer_fn(function()
+          vim.cmd("startinsert!")
+        end, 0)
       end,
       float_opts = {
         border = "curved",
