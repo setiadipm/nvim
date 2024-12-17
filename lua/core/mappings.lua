@@ -90,6 +90,7 @@ M.fugitive = {
 M.gitsigns = {
   { "n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Prev hunk" } },
   { "n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" } },
+  { "n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" } },
   { "n", "<leader>gd", ":Gitsigns toggle_deleted<CR>", { desc = "Toggle deleted" } },
   { "n", "<leader>gp", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk" } },
   { "n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" } },
