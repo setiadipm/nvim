@@ -47,6 +47,9 @@ return {
           file_ignore_patterns = {
             "node_modules",
             "vendor",
+            ".git",
+            ".idea",
+            ".vscode",
           },
           generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
           path_display = { "truncate" },
