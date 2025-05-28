@@ -47,7 +47,9 @@ return {
           file_ignore_patterns = {
             "node_modules",
             "vendor",
-            ".git",
+            "^.git/",
+            "/.git/",
+            "%.git/",
             ".idea",
             ".vscode",
           },
