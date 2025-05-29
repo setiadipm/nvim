@@ -172,7 +172,7 @@ M.spectre = {
 
 M.telescope = {
   -- Find
-  { "n", "<leader>fa", ":Telescope find_files hidden=true<CR>", { desc = "Find all files (Root dir)" } },
+  { "n", "<leader>fa", ":Telescope find_files hidden=true no_ignore=true<CR>", { desc = "Find all files (Root dir)" } },
   { "n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files (Root dir)" } },
   { "n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers" } },
   { "n", "<leader>fr", ":Telescope resume<CR>", { desc = "Resume" } },
