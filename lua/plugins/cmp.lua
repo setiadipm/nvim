@@ -93,8 +93,34 @@ return {
       },
     })
 
+    local mapping = cmp.mapping
     cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
+      mapping = {
+        ["<C-k>"] = {
+          c = mapping.select_prev_item(),
+        },
+        ["<C-j>"] = {
+          c = mapping.select_next_item(),
+        },
+        ["<C-n>"] = {
+          c = mapping.select_next_item(),
+        },
+        ["<C-p>"] = {
+          c = mapping.select_prev_item(),
+        },
+        ["<Tab>"] = {
+          c = mapping.select_next_item(),
+        },
+        ["<S-Tab>"] = {
+          c = mapping.select_prev_item(),
+        },
+        ["<C-y>"] = {
+          c = mapping.confirm({ select = false }),
+        },
+        ["<C-e>"] = {
+          c = mapping.abort(),
+        },
+      },
       sources = cmp.config.sources({
         { name = "path" },
         {
