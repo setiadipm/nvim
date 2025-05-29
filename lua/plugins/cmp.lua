@@ -1,4 +1,3 @@
-local cmp_ui = require("lib.utils").cmp_ui
 
 return {
   "hrsh7th/nvim-cmp",
@@ -30,6 +29,7 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local cmp_ui = require("lib.utils").cmp_ui
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
