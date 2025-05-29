@@ -1,4 +1,3 @@
-
 return {
   "hrsh7th/nvim-cmp",
   event = { "InsertEnter", "CmdlineEnter" },
@@ -90,6 +89,7 @@ return {
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "path" },
+        { name = "codeium" },
       },
     })
 

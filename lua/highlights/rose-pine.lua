@@ -39,6 +39,8 @@ return {
   CmpFloatBorder = { link = "FloatBorder" },
   CmpCursorLine = { link = "CSCursorLine2" },
 
+  CodeiumSuggestion = { fg = p.subtle },
+
   FloatBorder = { link = "CSBorder1" },
 
   InclineNormal = { bg = p.highlight_med },

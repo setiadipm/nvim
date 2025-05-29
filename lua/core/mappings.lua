@@ -71,17 +71,6 @@ M.default = {
   { "v", "<right>", ":echoerr 'Umm, use l instead'<CR>" }, -- Prevent arrow right
 }
 
-M.codeium = {
-  {
-    "i",
-    "<C-y>",
-    function()
-      return vim.fn["codeium#Accept"]()
-    end,
-    { expr = true, desc = "Accept Codeium snippet" },
-  },
-}
-
 M.fugitive = {
   { "n", "<leader>gg", ":Git<CR>:MaximizerToggle<CR>", { desc = "Git (Full screen)" } },
   { "n", "<leader>gv", ":Gvdiff<CR>", { desc = "Git diff vertical" } },

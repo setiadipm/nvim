@@ -46,6 +46,8 @@ return {
   CmpFloatBorder = { link = "FloatBorder" },
   CmpCursorLine = { link = "CSCursorLine2" },
 
+  CodeiumSuggestion = { fg = colors.overlay1 },
+
   FloatBorder = { link = "CSBorder1" },
 
   InclineNormal = { bg = colors.surface1 },
