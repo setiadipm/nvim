@@ -15,6 +15,14 @@ return {
     opts = {
       popup_border_style = "rounded",
       default_component_configs = {
+        diagnostics = {
+          symbols = {
+            hint = "󰌶",
+            info = "",
+            warn = "",
+            error = "",
+          },
+        },
         git_status = {
           symbols = {
             -- Change type
