@@ -69,6 +69,16 @@ M.default = {
   { "v", "<down>", ":echoerr 'Umm, use j instead'<CR>" }, -- Prevent arrow down
   { "v", "<left>", ":echoerr 'Umm, use h instead'<CR>" }, -- Prevent arrow left
   { "v", "<right>", ":echoerr 'Umm, use l instead'<CR>" }, -- Prevent arrow right
+
+  -- LazyGit
+  {
+    "n",
+    "<leader>lg",
+    function()
+      vim.fn.jobstart({ "tmux", "split-window", "-v", "lazygit" }, { detach = true })
+    end,
+    { desc = "LazyGit" },
+  },
 }
 
 M.fugitive = {
