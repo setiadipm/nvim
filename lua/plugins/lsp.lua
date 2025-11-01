@@ -65,14 +65,13 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
     init = function()
       require("lib.utils").keymap.load("lspconfig")
     end,
     config = function()
       -- Follow installation needed for each server in link below:
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
-      local lspconfig = require("lspconfig")
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local on_attach = function(client, bufnr)
@@ -98,7 +97,8 @@ return {
           opts = vim.tbl_deep_extend("force", opts, lsp_custom_opts)
         end
 
-        lspconfig[lspname].setup(opts)
+        vim.lsp.config(lspname, opts)
+        vim.lsp.enable(lspname)
       end
     end,
   },
