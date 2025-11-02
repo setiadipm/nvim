@@ -54,7 +54,7 @@ This repository hosts my Neovim configuration powered by 💤 [Lazy.nvim](https:
 
 | **Key**      | **Description**           | **Mode** |
 | ------------ | ------------------------- | -------- |
-| `<ESC>`      | Escape and clear hlsearch | **n**    |
+| `<esc>`      | Escape and clear hlsearch | **n**    |
 | `<leader>sv` | Split window vertically   | **n**    |
 | `<leader>sh` | Split window horizontally | **n**    |
 | `<leader>se` | Equal split size          | **n**    |

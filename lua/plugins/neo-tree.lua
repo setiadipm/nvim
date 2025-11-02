@@ -64,7 +64,7 @@ return {
               show_path = "relative",
             },
           },
-          ["<CR>"] = "open_with_window_picker",
+          ["<cr>"] = "open_with_window_picker",
           ["S"] = "split_with_window_picker",
           ["s"] = "vsplit_with_window_picker",
         },

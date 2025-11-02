@@ -1,31 +1,31 @@
 local M = {}
 
 M.default = {
-  -- { "n", "<leader>pv", ":Ex<CR>" }, -- Open netrw
+  -- { "n", "<leader>pv", ":Ex<cr>" }, -- Open netrw
 
-  { "n", "<ESC>", ":nohl<CR>", { desc = "Escape and clear hlsearch" } },
+  { "n", "<esc>", ":nohl<cr>", { desc = "Escape and clear hlsearch" } },
 
   { { "n", "v" }, "<leader>d", '"_d', { desc = "Delete no buffer" } },
   -- Don't copy the replaced text after pasting in visual mode
   -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-  { "x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Paste no buffer" } },
+  { "x", "p", 'p:let @+=@0<cr>:let @"=@0<cr>', { desc = "Paste no buffer" } },
   -- { { "n", "x" }, "p", '"0p', { desc = "Paste no buffer" } },
   { { "n", "x" }, "gw", "*N", { desc = "Search word under cursor" } },
 
   -- Lazy command
-  { "n", "<leader>ll", ":Lazy<CR>", { desc = "Open Lazy" } },
-  { "n", "<leader>lu", ":Lazy update<CR>", { desc = "Lazy update" } },
+  { "n", "<leader>ll", ":Lazy<cr>", { desc = "Open Lazy" } },
+  { "n", "<leader>lu", ":Lazy update<cr>", { desc = "Lazy update" } },
 
   -- Autoformat on save
-  { "n", "<leader>tc", ":ToggleCodeFormat<CR>", { desc = "Toggle auto code formatting on save" } },
-  { "n", "<leader>stc", ":StatusCodeFormat<CR>", { desc = "Print status auto code formatting" } },
+  { "n", "<leader>tc", ":ToggleCodeFormat<cr>", { desc = "Toggle auto code formatting on save" } },
+  { "n", "<leader>stc", ":StatusCodeFormat<cr>", { desc = "Print status auto code formatting" } },
 
   -- Window management
   { "n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" } },
   { "n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" } },
   { "n", "<leader>se", "<C-w>=", { desc = "Equal split size" } },
-  { "n", "<leader>sx", ":close<CR>", { desc = "Close current split" } },
-  { "n", "<leader>sq", ":bdelete<CR>", { desc = "Remove current buffer" } },
+  { "n", "<leader>sx", ":close<cr>", { desc = "Close current split" } },
+  { "n", "<leader>sq", ":bdelete<cr>", { desc = "Remove current buffer" } },
   { "n", "<C-k>", "<C-w>k", { desc = "Go to upper split" } },
   { "n", "<C-j>", "<C-w>j", { desc = "Go to lower split" } },
   { "n", "<C-h>", "<C-w>h", { desc = "Go to left split" } },
@@ -42,12 +42,12 @@ M.default = {
   { "i", "<C-j>", "<Down>", { desc = "Move down" } },
   { "i", "<C-h>", "<Left>", { desc = "Move left" } },
   { "i", "<C-l>", "<Right>", { desc = "Move right" } },
-  -- { "n", "<A-k>", ":m .-2<CR>==", { desc = "Move up" } },
-  -- { "n", "<A-j>", ":m .+1<CR>==", { desc = "Move down" } },
-  { "i", "<A-k>", "<ESC>:m .-2<CR>==gi", { desc = "Move up" } },
-  { "i", "<A-j>", "<ESC>:m .+1<CR>==gi", { desc = "Move down" } },
-  { "v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move up" } },
-  { "v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move down" } },
+  -- { "n", "<A-k>", ":m .-2<cr>==", { desc = "Move up" } },
+  -- { "n", "<A-j>", ":m .+1<cr>==", { desc = "Move down" } },
+  { "i", "<A-k>", "<esc>:m .-2<cr>==gi", { desc = "Move up" } },
+  { "i", "<A-j>", "<esc>:m .+1<cr>==gi", { desc = "Move down" } },
+  { "v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" } },
+  { "v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" } },
 
   -- Better indenting
   { "v", "<", "<gv" },
@@ -61,14 +61,14 @@ M.default = {
   { { "n", "x" }, "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true, desc = "Move down" } },
 
   -- Disable keys
-  { "n", "<up>", ":echoerr 'Umm, use k instead'<CR>" }, -- Prevent arrow up
-  { "n", "<down>", ":echoerr 'Umm, use j instead'<CR>" }, -- Prevent arrow down
-  { "n", "<left>", ":echoerr 'Umm, use h instead'<CR>" }, -- Prevent arrow left
-  { "n", "<right>", ":echoerr 'Umm, use l instead'<CR>" }, -- Prevent arrow right
-  { "v", "<up>", ":echoerr 'Umm, use k instead'<CR>" }, -- Prevent arrow up
-  { "v", "<down>", ":echoerr 'Umm, use j instead'<CR>" }, -- Prevent arrow down
-  { "v", "<left>", ":echoerr 'Umm, use h instead'<CR>" }, -- Prevent arrow left
-  { "v", "<right>", ":echoerr 'Umm, use l instead'<CR>" }, -- Prevent arrow right
+  { "n", "<up>", ":echoerr 'Umm, use k instead'<cr>" }, -- Prevent arrow up
+  { "n", "<down>", ":echoerr 'Umm, use j instead'<cr>" }, -- Prevent arrow down
+  { "n", "<left>", ":echoerr 'Umm, use h instead'<cr>" }, -- Prevent arrow left
+  { "n", "<right>", ":echoerr 'Umm, use l instead'<cr>" }, -- Prevent arrow right
+  { "v", "<up>", ":echoerr 'Umm, use k instead'<cr>" }, -- Prevent arrow up
+  { "v", "<down>", ":echoerr 'Umm, use j instead'<cr>" }, -- Prevent arrow down
+  { "v", "<left>", ":echoerr 'Umm, use h instead'<cr>" }, -- Prevent arrow left
+  { "v", "<right>", ":echoerr 'Umm, use l instead'<cr>" }, -- Prevent arrow right
 
   -- LazyGit
   {
@@ -82,32 +82,32 @@ M.default = {
 }
 
 M.fugitive = {
-  { "n", "<leader>gg", ":Git<CR>:MaximizerToggle<CR>", { desc = "Git (Full screen)" } },
-  { "n", "<leader>gv", ":Gvdiff<CR>", { desc = "Git diff vertical" } },
+  { "n", "<leader>gg", ":Git<cr>:MaximizerToggle<cr>", { desc = "Git (Full screen)" } },
+  { "n", "<leader>gv", ":Gvdiff<cr>", { desc = "Git diff vertical" } },
 }
 
 M.gitsigns = {
-  { "n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Prev hunk" } },
-  { "n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" } },
-  { "n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" } },
-  { "n", "<leader>gd", ":Gitsigns toggle_deleted<CR>", { desc = "Toggle deleted" } },
-  { "n", "<leader>gp", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk" } },
-  { "n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" } },
+  { "n", "[c", ":Gitsigns prev_hunk<cr>", { desc = "Prev hunk" } },
+  { "n", "]c", ":Gitsigns next_hunk<cr>", { desc = "Next hunk" } },
+  { "n", "<leader>gb", ":Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle line blame" } },
+  { "n", "<leader>gd", ":Gitsigns toggle_deleted<cr>", { desc = "Toggle deleted" } },
+  { "n", "<leader>gp", ":Gitsigns preview_hunk_inline<cr>", { desc = "Preview hunk" } },
+  { "n", "<leader>gr", ":Gitsigns reset_hunk<cr>", { desc = "Reset hunk" } },
 }
 
 M.gopher = {
-  { "n", "<leader>gaj", ":GoTagAdd json<CR>", { desc = "Add json struct tags" } },
-  { "n", "<leader>gay", ":GoTagAdd yaml<CR>", { desc = "Add yaml struct tags" } },
-  { "n", "<leader>gad", ":GoTagAdd db<CR>", { desc = "Add db struct tags" } },
-  { "n", "<leader>gie", ":GoIfErr<CR>", { desc = "Add if err block" } },
+  { "n", "<leader>gaj", ":GoTagAdd json<cr>", { desc = "Add json struct tags" } },
+  { "n", "<leader>gay", ":GoTagAdd yaml<cr>", { desc = "Add yaml struct tags" } },
+  { "n", "<leader>gad", ":GoTagAdd db<cr>", { desc = "Add db struct tags" } },
+  { "n", "<leader>gie", ":GoIfErr<cr>", { desc = "Add if err block" } },
 }
 
 M.lsp = {
-  { "n", "K", ":Lspsaga hover_doc<CR>", { desc = "Lspsaga hover" } },
-  { "n", "<leader>fo", ":Lspsaga outline<CR>", { desc = "Lspsaga outline" } },
-  { "n", "gd", ":Lspsaga peek_definition<CR>", { desc = "Lspsaga peek definition" } },
-  { "n", "gD", ":Lspsaga goto_definition<CR>", { desc = "Lspsaga goto definition" } },
-  { "n", "gf", ":Lspsaga finder<CR>", { desc = "Lspsaga finder" } },
+  { "n", "K", ":Lspsaga hover_doc<cr>", { desc = "Lspsaga hover" } },
+  { "n", "<leader>fo", ":Lspsaga outline<cr>", { desc = "Lspsaga outline" } },
+  { "n", "gd", ":Lspsaga peek_definition<cr>", { desc = "Lspsaga peek definition" } },
+  { "n", "gD", ":Lspsaga goto_definition<cr>", { desc = "Lspsaga goto definition" } },
+  { "n", "gf", ":Lspsaga finder<cr>", { desc = "Lspsaga finder" } },
   {
     "n",
     "gi",
@@ -116,7 +116,7 @@ M.lsp = {
     end,
     { desc = "LSP implementation" },
   },
-  { { "n", "v" }, "<leader>ca", ":Lspsaga code_action<CR>", { desc = "Lspsaga code action" } },
+  { { "n", "v" }, "<leader>ca", ":Lspsaga code_action<cr>", { desc = "Lspsaga code action" } },
   {
     "n",
     "<leader>cf",
@@ -126,8 +126,8 @@ M.lsp = {
     { desc = "LSP formatting" },
   },
   { "n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP rename" } },
-  { "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", { desc = "Goto prev diagnostic" } },
-  { "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", { desc = "Goto next diagnostic" } },
+  { "n", "[d", ":Lspsaga diagnostic_jump_prev<cr>", { desc = "Goto prev diagnostic" } },
+  { "n", "]d", ":Lspsaga diagnostic_jump_next<cr>", { desc = "Goto next diagnostic" } },
   {
     "n",
     "<leader>wl",
@@ -145,39 +145,39 @@ M.lsp = {
 }
 
 M.lspconfig = {
-  { "n", "<leader>cl", ":LspInfo<CR>", { desc = "LSP Info" } },
+  { "n", "<leader>cl", ":LspInfo<cr>", { desc = "LSP Info" } },
 }
 
 M.mason = {
-  { "n", "<leader>cm", ":Mason<CR>", { desc = "Mason" } },
+  { "n", "<leader>cm", ":Mason<cr>", { desc = "Mason" } },
 }
 
 M.maximizer = {
-  { "n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Toggle maximize split" } },
+  { "n", "<leader>sm", ":MaximizerToggle<cr>", { desc = "Toggle maximize split" } },
 }
 
 M.neotree = {
-  -- { "n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle neotree" } },
-  { "n", "<leader>e", ":Neotree reveal_force_cwd<CR>", { desc = "Reveal neotree" } },
+  -- { "n", "<leader>e", ":Neotree toggle<cr>", { desc = "Toggle neotree" } },
+  { "n", "<leader>e", ":Neotree reveal_force_cwd<cr>", { desc = "Reveal neotree" } },
 }
 
 M.noice = {
-  { "n", "<leader>nh", ":NoiceHistory<CR>", { desc = "Noice history" } },
+  { "n", "<leader>nh", ":NoiceHistory<cr>", { desc = "Noice history" } },
 }
 
 M.spectre = {
-  { "n", "<leader>sr", ":Spectre<CR>", { desc = "Replace in files (Spectre)" } },
+  { "n", "<leader>sr", ":Spectre<cr>", { desc = "Replace in files (Spectre)" } },
 }
 
 M.telescope = {
   -- Find
-  { "n", "<leader>fa", ":Telescope find_files hidden=true no_ignore=true<CR>", { desc = "Find all files (Root dir)" } },
-  { "n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files (Root dir)" } },
-  { "n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers" } },
-  { "n", "<leader>fr", ":Telescope resume<CR>", { desc = "Resume" } },
-  -- { "n", "<leader>fw", ":Telescope current_buffer_fuzzy_find<CR>", { desc = "Find words in buffer" } },
-  { "n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Grep" } },
-  { "n", "<leader>fk", ":Telescope keymaps<CR>", { desc = "Key maps" } },
+  { "n", "<leader>fa", ":Telescope find_files hidden=true no_ignore=true<cr>", { desc = "Find all files (Root dir)" } },
+  { "n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find files (Root dir)" } },
+  { "n", "<leader>fb", ":Telescope buffers<cr>", { desc = "Buffers" } },
+  { "n", "<leader>fr", ":Telescope resume<cr>", { desc = "Resume" } },
+  -- { "n", "<leader>fw", ":Telescope current_buffer_fuzzy_find<cr>", { desc = "Find words in buffer" } },
+  { "n", "<leader>fg", ":Telescope live_grep<cr>", { desc = "Grep" } },
+  { "n", "<leader>fk", ":Telescope keymaps<cr>", { desc = "Key maps" } },
   {
     "n",
     "<leader>fs",
@@ -188,54 +188,54 @@ M.telescope = {
     { desc = "Find words" },
   },
   -- Diagnostic
-  { "n", "<leader>q", ":Telescope diagnostics<CR>", { desc = "Show diagnotics" } },
+  { "n", "<leader>q", ":Telescope diagnostics<cr>", { desc = "Show diagnotics" } },
   -- Git
-  { "n", "<leader>fc", ":Telescope git_commits<CR>", { desc = "Show git commits" } },
-  { "n", "<leader>fs", ":Telescope git_status<CR>", { desc = "Show git status" } },
+  { "n", "<leader>fc", ":Telescope git_commits<cR>", { desc = "Show git commits" } },
+  { "n", "<leader>fs", ":Telescope git_status<cr>", { desc = "Show git status" } },
   -- Theme
-  { "n", "<leader>th", ":Telescope themes<CR>", { desc = "Theme switcher" } },
+  { "n", "<leader>th", ":Telescope themes<cr>", { desc = "Theme switcher" } },
 }
 
 M.todo = {
-  { "n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find Todos" } },
+  { "n", "<leader>ft", ":TodoTelescope<cr>", { desc = "Find Todos" } },
 }
 
 M.tmuxnavigator = {
-  { "n", "<C-h>", ":TmuxNavigateLeft<CR>", dec = "Window left" },
-  { "n", "<C-j>", ":TmuxNavigateDown<CR>", dec = "Window down" },
-  { "n", "<C-k>", ":TmuxNavigateUp<CR>", dec = "Window up" },
-  { "n", "<C-l>", ":TmuxNavigateRight<CR>", dec = "Window right" },
+  { "n", "<C-h>", ":TmuxNavigateLeft<cr>", dec = "Window left" },
+  { "n", "<C-j>", ":TmuxNavigateDown<cr>", dec = "Window down" },
+  { "n", "<C-k>", ":TmuxNavigateUp<cr>", dec = "Window up" },
+  { "n", "<C-l>", ":TmuxNavigateRight<cr>", dec = "Window right" },
 }
 
 M.toggleterm = {
-  { "n", "<A-i>", ":ToggleTerm direction=float<CR>", { desc = "Toggle float terminal" } },
-  { "n", "<A-h>", ":ToggleTerm direction=horizontal size=12<CR>", { desc = "Toggle horizontal terminal" } },
-  { "n", "<A-v>", ":ToggleTerm direction=vertical size=40<CR>", { desc = "Toggle vertical terminal" } },
+  { "n", "<A-i>", ":ToggleTerm direction=float<cr>", { desc = "Toggle float terminal" } },
+  { "n", "<A-h>", ":ToggleTerm direction=horizontal size=12<cr>", { desc = "Toggle horizontal terminal" } },
+  { "n", "<A-v>", ":ToggleTerm direction=vertical size=40<cr>", { desc = "Toggle vertical terminal" } },
 
   {
     "t",
     "<A-i>",
-    [[<C-\><C-n>:ToggleTerm<CR>]],
+    [[<C-\><C-n>:ToggleTerm<cr>]],
     { desc = "Toggle terminal" },
   },
   {
     "t",
     "<A-h>",
-    [[<C-\><C-n>:ToggleTerm<CR>]],
+    [[<C-\><C-n>:ToggleTerm<cr>]],
     { desc = "Toggle terminal" },
   },
   {
     "t",
     "<A-v>",
-    [[<C-\><C-n>:ToggleTerm<CR>]],
+    [[<C-\><C-n>:ToggleTerm<cr>]],
     { desc = "Toggle terminal" },
   },
-  { "t", "<ESC>", [[<C-\><C-n>]] },
+  { "t", "<esc>", [[<C-\><C-n>]] },
   { "t", "jk", [[<C-\><C-n>]] },
-  -- { "t", "<C-k>", [[:wincmd k<CR>]] },
-  -- { "t", "<C-j>", [[:wincmd j<CR>]] },
-  -- { "t", "<C-h>", [[:wincmd h<CR>]] },
-  -- { "t", "<C-l>", [[:wincmd l<CR>]] },
+  -- { "t", "<C-k>", [[:wincmd k<cr>]] },
+  -- { "t", "<C-j>", [[:wincmd j<cr>]] },
+  -- { "t", "<C-h>", [[:wincmd h<cr>]] },
+  -- { "t", "<C-l>", [[:wincmd l<cr>]] },
   -- { "t", "<C-w>", [[<C-\><C-n><C-w>]] },
 }
 
@@ -259,11 +259,11 @@ M.ufo = {
 }
 
 M.wakatime = {
-  { "n", "<leader>wt", ":WakaTimeToday<CR>", { desc = "WakaTime today" } },
+  { "n", "<leader>wt", ":WakaTimeToday<cr>", { desc = "WakaTime today" } },
 }
 
 M.whichkey = {
-  { "n", "<leader>wk", ":WhichKey<CR>", { desc = "Which-key all keymaps" } },
+  { "n", "<leader>wk", ":WhichKey<cr>", { desc = "Which-key all keymaps" } },
 }
 
 return M

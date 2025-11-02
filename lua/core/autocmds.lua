@@ -72,7 +72,7 @@ autocmd("FileType", {
     local keymap = require("lib.utils").keymap.set
 
     vim.bo[event.buf].buflisted = false
-    keymap("n", "q", ":close<CR>", { buffer = event.buf })
+    keymap("n", "q", ":close<cr>", { buffer = event.buf })
   end,
 })
 
