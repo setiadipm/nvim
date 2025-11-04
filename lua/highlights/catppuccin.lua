@@ -73,6 +73,10 @@ return {
   NoiceCmdlinePopupBorder = { fg = colors.lavender },
   NoiceCmdlineIcon = { fg = colors.lavender },
 
+  Normal = { link = "FloatBorder" },
+  NormalNC = { link = "FloatBorder" },
+  NormalFloat = { link = "FloatBorder" },
+
   TelescopeBorder = { link = "CSBorder1" },
   TelescopeNormal = { fg = colors.overlay2, bg = "none" },
   TelescopeSelection = { link = "CSCursorLine1" },
