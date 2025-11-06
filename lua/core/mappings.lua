@@ -75,7 +75,11 @@ M.default = {
     "n",
     "<leader>lg",
     function()
-      vim.fn.jobstart({ "tmux", "split-window", "-v", "lazygit" }, { detach = true })
+      -- vim.fn.jobstart({ "tmux", "split-window", "-v", "-p", "95", "lazygit" }, { detach = true })
+      vim.fn.jobstart(
+        { "tmux", "popup", "-E", "-d", vim.fn.getcwd(), "-w", "90%", "-h", "90%", "lazygit" },
+        { detach = true }
+      )
     end,
     { desc = "LazyGit" },
   },
