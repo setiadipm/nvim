@@ -1,3 +1,5 @@
+local utils = require("lib.utils")
+
 local M = {}
 
 M.default = {
@@ -75,11 +77,17 @@ M.default = {
     "n",
     "<leader>lg",
     function()
-      -- vim.fn.jobstart({ "tmux", "split-window", "-v", "-p", "95", "lazygit" }, { detach = true })
-      vim.fn.jobstart(
-        { "tmux", "popup", "-E", "-d", vim.fn.getcwd(), "-w", "90%", "-h", "90%", "lazygit" },
-        { detach = true }
-      )
+      if not utils.ensure_executable("tmux", "tmux") then
+        return
+      end
+      if not utils.ensure_executable("lazygit", "Lazygit") then
+        return
+      end
+
+      utils.tmux_popup("lazygit", {
+        width = "90%",
+        height = "90%",
+      })
     end,
     { desc = "LazyGit" },
   },
