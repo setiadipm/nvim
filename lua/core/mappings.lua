@@ -83,6 +83,34 @@ M.default = {
     end,
     { desc = "LazyGit" },
   },
+
+  -- Opencode
+  {
+    "n",
+    "<leader>oc",
+    function()
+      if not utils.ensure_executable("tmux", "tmux") then
+        return
+      end
+      if not utils.ensure_executable("opencode", "Opencode") then
+        return
+      end
+
+      local cwd = vim.fn.getcwd()
+      local project = vim.fn.fnamemodify(cwd, ":t") -- folder name
+      local session = "opencode-" .. project:gsub("[^A-Za-z0-9_%-]", "_")
+
+      local cmd =
+        string.format("tmux attach -t %s || tmux new -s %s -c %s opencode", session, session, vim.fn.shellescape(cwd))
+
+      utils.tmux_popup(cmd, {
+        cwd = cwd,
+        width = "90%",
+        height = "90%",
+      })
+    end,
+    { desc = "Opencode (project session)" },
+  },
 }
 
 M.fugitive = {

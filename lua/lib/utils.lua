@@ -92,4 +92,22 @@ M.keymap = {
   end,
 }
 
+M.ensure_executable = function(bin, label)
+  if vim.fn.executable(bin) ~= 1 then
+    vim.notify(label .. " is not installed or not found in PATH", vim.log.levels.ERROR)
+    return false
+  end
+  return true
+end
+
+M.tmux_popup = function(cmd, opts)
+  opts = opts or {}
+  local cwd = opts.cwd or vim.fn.getcwd()
+  local width = opts.width or "90%"
+  local height = opts.height or "90%"
+
+  -- vim.fn.jobstart({ "tmux", "split-window", "-v", "-p", "95", "lazygit" }, { detach = true })
+  vim.fn.jobstart({ "tmux", "popup", "-E", "-d", cwd, "-w", width, "-h", height, "sh", "-c", cmd }, { detach = true })
+end
+
 return M
