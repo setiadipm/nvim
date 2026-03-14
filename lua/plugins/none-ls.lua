@@ -50,7 +50,7 @@ return {
 
       usercmd("StatusCodeFormat", function()
         local status = _G.codeformat_enabled and "ENABLED" or "DISABLED"
-        print("auto code formatting on save is now", status)
+        vim.notify("Code format on save: " .. status)
       end, {})
     end,
   },
