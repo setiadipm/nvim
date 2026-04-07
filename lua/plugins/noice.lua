@@ -22,6 +22,21 @@ return {
         long_message_to_split = false,
         inc_rename = false,
         lsp_doc_hover = false,
+        lsp_doc_border = true,
+      },
+      views = {
+        hover = {
+          border = {
+            style = "rounded",
+            padding = { 1, 2 },
+          },
+          win_options = {
+            winhighlight = {
+              Normal = "NormalFloat",
+              FloatBorder = "FloatBorder",
+            },
+          },
+        },
       },
     },
   },
