@@ -108,8 +108,12 @@ M.default = {
       local project = vim.fn.fnamemodify(cwd, ":t") -- folder name
       local session = "opencode-" .. project:gsub("[^A-Za-z0-9_%-]", "_")
 
-      local cmd =
-        string.format("tmux attach -t %s || tmux new -s %s -c %s opencode", session, session, vim.fn.shellescape(cwd))
+      local cmd = string.format(
+        "tmux attach -t %s || tmux new -s %s -c %s 'exec opencode'",
+        session,
+        session,
+        vim.fn.shellescape(cwd)
+      )
 
       utils.tmux_popup(cmd, {
         cwd = cwd,
