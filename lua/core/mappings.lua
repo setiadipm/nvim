@@ -192,7 +192,7 @@ M.lsp = {
 }
 
 M.lspconfig = {
-  { "n", "<leader>cl", ":LspInfo<cr>", { desc = "LSP Info" } },
+  { "n", "<leader>cl", ":checkhealth vim.lsp<cr>", { desc = "LSP Info" } },
 }
 
 M.mason = {
