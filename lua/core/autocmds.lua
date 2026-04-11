@@ -52,6 +52,18 @@ autocmd("TextYankPost", {
 })
 
 autocmd("FileType", {
+  desc = "Start treesitter highlighting",
+  group = augroup("treesitter_start"),
+  callback = function(event)
+    if vim.bo[event.buf].buftype ~= "" then
+      return
+    end
+
+    pcall(vim.treesitter.start, event.buf)
+  end,
+})
+
+autocmd("FileType", {
   desc = "Close some filetypes with <q>",
   group = augroup("close_with_q"),
   pattern = {

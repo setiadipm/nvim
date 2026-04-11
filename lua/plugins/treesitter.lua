@@ -5,9 +5,9 @@ return {
     commit = vim.fn.has("nvim-0.12") == 0 and "7caec274fd19c12b55902a5b795100d21531391f" or nil,
     version = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
+    lazy = false,
     opts = {
-      auto_install = true,
+      install_dir = vim.fn.stdpath("data") .. "/site",
       ensure_installed = {
         "bash",
         "c",
@@ -21,7 +21,6 @@ return {
         "html",
         "javascript",
         "json",
-        "jsonc",
         "lua",
         "make",
         "markdown",
@@ -33,14 +32,21 @@ return {
         "vim",
         "yaml",
       },
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-      },
-      indent = {
-        enable = true,
-      },
     },
+    config = function(_, opts)
+      local ts = require("nvim-treesitter")
+
+      ts.setup({ install_dir = opts.install_dir })
+
+      local installed = ts.get_installed()
+      local missing = vim.tbl_filter(function(lang)
+        return not vim.tbl_contains(installed, lang)
+      end, opts.ensure_installed)
+
+      if #missing > 0 then
+        ts.install(missing)
+      end
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
