@@ -5,7 +5,16 @@ local function augroup(name)
 end
 
 -- Set indentation for certain file type
-vim.cmd("autocmd Filetype php,css setlocal ts=4 sw=4")
+autocmd("FileType", {
+  desc = "Set indentation for php and css",
+  group = augroup("indent_php_css"),
+  pattern = { "php", "css" },
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
 
 -- Setting colorscheme is triggered in core/init.lua
 autocmd("ColorScheme", {
