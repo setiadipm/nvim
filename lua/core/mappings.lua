@@ -147,14 +147,7 @@ M.gopher = {
 }
 
 M.lsp = {
-  {
-    "n",
-    "K",
-    function()
-      vim.lsp.buf.hover()
-    end,
-    { desc = "LSP hover" },
-  },
+  { "n", "K", ":Lspsaga hover_doc<cr>", { desc = "Lspsaga hover doc" } },
   { "n", "<leader>fo", ":Lspsaga outline<cr>", { desc = "Lspsaga outline" } },
   { "n", "gd", ":Lspsaga peek_definition<cr>", { desc = "Lspsaga peek definition" } },
   { "n", "gD", ":Lspsaga goto_definition<cr>", { desc = "Lspsaga goto definition" } },
