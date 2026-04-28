@@ -110,4 +110,34 @@ M.tmux_popup = function(cmd, opts)
   vim.fn.jobstart({ "tmux", "popup", "-E", "-d", cwd, "-w", width, "-h", height, "sh", "-c", cmd }, { detach = true })
 end
 
+M.open_tmux_app = function(bin, label, opts)
+  if not M.ensure_executable("tmux", "tmux") then
+    return
+  end
+
+  if not M.ensure_executable(bin, label) then
+    return
+  end
+
+  opts = opts or {}
+
+  if not opts.project_session then
+    M.tmux_popup(bin, opts)
+    return
+  end
+
+  local cwd = opts.cwd or vim.fn.getcwd()
+  local project = vim.fn.fnamemodify(cwd, ":t")
+  local session = string.format("%s-%s", bin, project:gsub("[^A-Za-z0-9_%-]", "_"))
+  local cmd = string.format(
+    "tmux attach -t %s || tmux new -s %s -c %s 'exec %s'",
+    session,
+    session,
+    vim.fn.shellescape(cwd),
+    bin
+  )
+
+  M.tmux_popup(cmd, vim.tbl_extend("force", opts, { cwd = cwd }))
+end
+
 return M

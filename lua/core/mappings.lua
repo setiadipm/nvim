@@ -77,17 +77,7 @@ M.default = {
     "n",
     "<leader>lg",
     function()
-      if not utils.ensure_executable("tmux", "tmux") then
-        return
-      end
-      if not utils.ensure_executable("lazygit", "Lazygit") then
-        return
-      end
-
-      utils.tmux_popup("lazygit", {
-        width = "90%",
-        height = "90%",
-      })
+      utils.open_tmux_app("lazygit", "Lazygit")
     end,
     { desc = "LazyGit" },
   },
@@ -97,31 +87,19 @@ M.default = {
     "n",
     "<leader>oc",
     function()
-      if not utils.ensure_executable("tmux", "tmux") then
-        return
-      end
-      if not utils.ensure_executable("opencode", "Opencode") then
-        return
-      end
-
-      local cwd = vim.fn.getcwd()
-      local project = vim.fn.fnamemodify(cwd, ":t") -- folder name
-      local session = "opencode-" .. project:gsub("[^A-Za-z0-9_%-]", "_")
-
-      local cmd = string.format(
-        "tmux attach -t %s || tmux new -s %s -c %s 'exec opencode'",
-        session,
-        session,
-        vim.fn.shellescape(cwd)
-      )
-
-      utils.tmux_popup(cmd, {
-        cwd = cwd,
-        width = "90%",
-        height = "90%",
-      })
+      utils.open_tmux_app("opencode", "Opencode", { project_session = true })
     end,
     { desc = "Opencode (project session)" },
+  },
+
+  -- Codex
+  {
+    "n",
+    "<leader>cx",
+    function()
+      utils.open_tmux_app("codex", "Codex", { project_session = true })
+    end,
+    { desc = "Codex (project session)" },
   },
 }
 
