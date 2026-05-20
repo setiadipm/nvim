@@ -92,6 +92,16 @@ M.default = {
     { desc = "Opencode (project session)" },
   },
 
+  -- Claude
+  {
+    "n",
+    "<leader>cc",
+    function()
+      utils.open_tmux_app("claude", "Claude", { project_session = true })
+    end,
+    { desc = "Claude (project session)" },
+  },
+
   -- Codex
   {
     "n",
